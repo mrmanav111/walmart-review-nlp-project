@@ -1,64 +1,111 @@
-# walmart-review-nlp-project
-A Natural Language Processing pipeline project for text preprocessing, TF-IDF analysis, similarity analysis, POS tagging, named entity recognition, and visualization using Python.
+# NLP Pipeline – Customer Product Feedback System
+**Module 18: Natural Language Processing**
+**Component B: Practical Implementation**
+**Scenario 4: Customer Product Feedback System**
 
-NLP Review Analysis Pipeline
-Project Overview
+---
 
-This project presents a complete Natural Language Processing (NLP) pipeline developed using Python. The system performs preprocessing, text analysis, feature extraction, similarity analysis, and visualization on customer review data.
+## Overview
+This project implements a complete NLP pipeline applied to the **Walmart Product Reviews** dataset. The pipeline covers all required stages:
 
-The project uses Walmart customer review data to demonstrate several important NLP techniques including tokenization, stemming, lemmatization, TF-IDF vectorization, cosine similarity, Word2Vec similarity, POS tagging, Named Entity Recognition (NER), and n-gram analysis.
+1. Text Pre-processing & Handling
+2. Vectorization & Semantic Representation (BoW, TF-IDF, Word2Vec)
+3. Grammatical Analysis & Parsing (POS, DCG, Dependency Parse, WordNet)
+4. Information Extraction (NER, Time & Location)
+5. Language Modelling (N-gram, Entropy, Perplexity, Text Generation)
+6. Data Visualisation (12 output charts)
 
-The purpose of this project is to demonstrate practical implementation of NLP techniques in a structured and automated pipeline.
+---
 
-Features
-Text preprocessing
-Tokenization
-Stopword removal
-Stemming and lemmatization
-TF-IDF feature extraction
-Cosine similarity analysis
-Word2Vec similarity analysis
-Part-of-speech tagging
-Named Entity Recognition (NER)
-Bigram frequency analysis
-Data visualization using graphs and charts
-Technologies Used
-Python
-Pandas
-NumPy
-NLTK
-spaCy
-Scikit-learn
-Gensim
-Matplotlib
-Seaborn
-Dataset
+## Dataset
+- **Name:** Walmart Product Reviews Dataset
+- **Source:** [Kaggle](https://www.kaggle.com/datasets/promptcloud/walmart-product-review-dataset/data)
+- **Size:** ~5,000 records
+- **Format:** TSV (Tab-Separated Values)
 
-The project uses Walmart customer review data stored in TSV format.
+---
 
-Dataset file:
-              Data/walmart_reviews.tsv
+## Setup & Installation
 
-Project Structure
+### Step 1 – Clone / download the project
+Place all files in one folder.
 
-files/
+### Step 2 – Install Python dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Step 3 – Download spaCy model
+```bash
+python -m spacy download en_core_web_sm
+```
+
+### Step 4 – Download the dataset
+1. Go to https://www.kaggle.com/datasets/promptcloud/walmart-product-review-dataset/data
+2. Download the TSV file
+3. Rename it to `walmart_reviews.tsv`
+4. Place it in the **same folder** as `nlp_pipeline.py`
+
+### Step 5 – Run the pipeline
+```bash
+python nlp_pipeline.py
+```
+
+---
+
+## Output
+All output images are automatically saved to the `./output_images/` folder:
+
+| File | Description |
+|------|-------------|
+| `01_rating_distribution.png` | Bar chart of star ratings |
+| `02_stem_vs_lemma.png` | Stemming vs Lemmatization comparison table |
+| `03_top20_words.png` | Top 20 most frequent words (lemmatized) |
+| `04_tfidf_top20.png` | Top 20 TF-IDF terms |
+| `05_cosine_similarity.png` | Cosine similarity heatmap (sample reviews) |
+| `06_word2vec_similarity.png` | Word2Vec pairwise similarity heatmap |
+| `07_pos_distribution.png` | POS tag frequency distribution |
+| `08_ner_entity_counts.png` | NER entity type counts |
+| `09_location_extraction.png` | Top locations from regex extraction |
+| `10_bigram_frequency.png` | Top 15 bigrams |
+| `11_sentiment_distribution.png` | Sentiment distribution (rating-based) |
+| `12_word_trends.png` | Word frequency trends across review batches |
+
+---
+
+## Project Structure
+```
+project/
 │
-├── Data/
-│   └── walmart_reviews.tsv
-│
-├── output_images/
-│   ├── 02_stem_vs_lemma.png
-│   ├── 03_top20_words.png
-│   ├── 04_tfidf_top20.png
-│   ├── 05_cosine_similarity.png
-│   ├── 06_word2vec_similarity.png
-│   ├── 07_pos_distribution.png
-│   ├── 08_ner_entity_counts.png
-│   ├── 09_location_extraction.png
-│   ├── 10_bigram_frequency.png
-│   └── 12_word_trends.png
-│
-├── nlp_pipeline.py
-├── requirements.txt
-├── README.md
-└── run_log.txt
+├── nlp_pipeline.py          ← Main Python script (run this)
+├── walmart_reviews.tsv      ← Dataset (download from Kaggle)
+├── requirements.txt         ← Python dependencies
+├── README.md                ← This file
+└── output_images/           ← Auto-created; all charts saved here
+```
+
+---
+
+## Key Design Choices
+
+### Pre-processing
+- Regex cleaning removes URLs, HTML tags, and special characters
+- Lemmatization preferred over stemming for customer feedback (preserves meaning)
+- Custom stop-word list based on NLTK English corpus
+
+### Vectorization
+- **TF-IDF with bigrams** chosen over plain BoW to capture phrases like *"fast delivery"* and *"poor quality"* which are common in product reviews
+- **Word2Vec** (100d, window=5) trained on the review corpus to capture product-domain semantics
+
+### NER
+- spaCy `en_core_web_sm` used for entity recognition
+- Regex patterns added for time expressions and brand/location mentions not covered by spaCy
+
+### Language Model
+- Trigram MLE model with NLTK
+- Entropy and perplexity calculated manually for transparency
+
+---
+
+## Dependencies
+See `requirements.txt`. Python 3.9+ recommended.

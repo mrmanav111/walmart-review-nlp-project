@@ -1,0 +1,7 @@
+nltk==3.8.1
+spacy==3.7.4
+scikit-learn==1.4.2
+gensim==4.3.2
+numpy==1.26.4
+pandas==2.2.2
+matplotlib==3.8.4
