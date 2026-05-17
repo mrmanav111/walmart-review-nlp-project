@@ -133,18 +133,18 @@ The project generates several visual outputs to support the NLP analysis. Some e
 
 ![Named Entity Recognition](output_images/08_ner_entity_counts.png)
 
-### Steam vs lemma 
+### Stem vs Lemma 
 
 ![Named Entity Recognition](output_images/02_stem_vs_lemma.png)
 
-### location_extration
+### Location Extraction
 
 
 ![Named Entity Recognition](output_images/09_location_extractiong.png)
 
 ### bigram_frequency
 
-![Named_Entity Reconition](output_images/10_bigram_frequency.png)
+![Named Entity Recognition](output_images/10_bigram_frequency.png)
 
 ### word trends 
 
