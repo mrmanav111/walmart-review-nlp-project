@@ -1,5 +1,5 @@
 # NLP Pipeline – Customer Product Feedback System
-**Module 18: Natural Language Processing**
+** Natural Language Processing**
 **Component B: Practical Implementation**
 **Scenario 4: Customer Product Feedback System**
 
@@ -13,7 +13,7 @@ This project implements a complete NLP pipeline applied to the **Walmart Product
 3. Grammatical Analysis & Parsing (POS, DCG, Dependency Parse, WordNet)
 4. Information Extraction (NER, Time & Location)
 5. Language Modelling (N-gram, Entropy, Perplexity, Text Generation)
-6. Data Visualisation (12 output charts)
+6. Data Visualisation (10 output chart)
 
 ---
 
@@ -58,7 +58,7 @@ All output images are automatically saved to the `./output_images/` folder:
 
 | File | Description |
 |------|-------------|
-| `01_rating_distribution.png` | Bar chart of star ratings |
+
 | `02_stem_vs_lemma.png` | Stemming vs Lemmatization comparison table |
 | `03_top20_words.png` | Top 20 most frequent words (lemmatized) |
 | `04_tfidf_top20.png` | Top 20 TF-IDF terms |
@@ -68,7 +68,6 @@ All output images are automatically saved to the `./output_images/` folder:
 | `08_ner_entity_counts.png` | NER entity type counts |
 | `09_location_extraction.png` | Top locations from regex extraction |
 | `10_bigram_frequency.png` | Top 15 bigrams |
-| `11_sentiment_distribution.png` | Sentiment distribution (rating-based) |
 | `12_word_trends.png` | Word frequency trends across review batches |
 
 ---
