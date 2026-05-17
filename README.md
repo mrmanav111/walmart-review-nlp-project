@@ -103,6 +103,52 @@ project/
 
 ### Language Model
 - Trigram MLE model with NLTK
+
+
+## Sample Output Visualizations
+
+The project generates several visual outputs to support the NLP analysis. Some examples are shown below.
+
+### Top 20 Words
+
+![Top 20 Words](output_images/03_top20_words)
+
+### TF-IDF Top 20 Words
+
+![TF-IDF Top 20 Words](output_images/04_tfidf_top20.png)
+
+### Cosine Similarity
+
+![Cosine Similarity](output_images/05_cosine_similarity.png)
+
+### Word2Vec Similarity
+
+![Word2Vec Similarity](output_images/06_word2vec_similarity.png)
+
+### POS Tag Distribution
+
+![POS Tag Distribution](output_images/07_pos_distribution.png)
+
+### Named Entity Recognition
+
+![Named Entity Recognition](output_images/08_ner_entity_counts.png)
+
+### Steam vs lemma 
+
+![Named Entity Recognition](output_images/02_stem_vs_lemma.png)
+
+### location_extration
+
+
+![Named Entity Recognition](output_images/09_location_extractiong.png)
+
+### bigram_frequency
+
+![Named_Entity Reconition](output_images/10_bigram_frequency.png)
+
+### word trends 
+
+![Named_Entity Reconition](output_images/12_word_trends.png)
 - Entropy and perplexity calculated manually for transparency
 
 ---
